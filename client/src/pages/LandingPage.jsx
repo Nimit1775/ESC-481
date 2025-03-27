@@ -4,7 +4,7 @@ import {
   MessageCircle, Users, Zap, Star, 
   Github, Twitter, Linkedin 
 } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 function LandingPage() {
   return (
     <div className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 min-h-screen flex flex-col">
@@ -24,10 +24,14 @@ function Header() {
   return (
     <header className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md shadow-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
+       
         <div className="flex gap-3 items-center text-2xl font-bold text-indigo-600">
           <Clock className="h-8 w-8 text-indigo-500" />
+          <a href="#">
           <span className="tracking-tight">FocusFlow</span>
+          </a>
         </div>
+       
         <nav className="flex items-center space-x-6">
           <a href="#features" className="text-gray-700 hover:text-indigo-600 transition-colors font-medium">
             Features
@@ -35,9 +39,7 @@ function Header() {
           <a href="#about" className="text-gray-700 hover:text-indigo-600 transition-colors font-medium">
             About
           </a>
-          <a href="#pricing" className="text-gray-700 hover:text-indigo-600 transition-colors font-medium">
-            Pricing
-          </a>
+         
           <a
             href="#"
             className="bg-indigo-600 text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition-colors shadow-md"
@@ -114,7 +116,7 @@ function FeaturesSection() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="features" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -145,7 +147,7 @@ function FeaturesSection() {
 
 function AboutTeamSection() {
   const teamMembers = [
-    { name: 'Nimit Sodhani', position: '' },
+    { name: 'Nimit Sodhani', position: 'Developer' },
     { name: 'Pradip Adhikary', position: '' },
     { name: 'Nandini kumari ', position: '' },
     { name: 'Sagnik Dey', position: '' },
@@ -154,7 +156,7 @@ function AboutTeamSection() {
   ];
 
   return (
-    <section className="py-20">
+    <section id="about" className="py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
