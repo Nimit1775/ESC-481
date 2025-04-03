@@ -30,7 +30,7 @@ const Register = () => {
     
     setIsLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/user/register", {
+      const response = await axios.post("https://esc-481.onrender.com/api/user/register", {
         name: formData.name,
         email: formData.email,
         password: formData.password

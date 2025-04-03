@@ -10,6 +10,9 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  
+  // Base API URL
+  const API_BASE_URL = "https://esc-481.onrender.com";
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -20,7 +23,7 @@ const Home = () => {
 
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/user/me", {
+        const response = await axios.get(`${API_BASE_URL}/api/user/me`, {
           headers: { "x-auth-token": token }
         });
         setUser(response.data);
@@ -35,7 +38,7 @@ const Home = () => {
 
     const fetchTodos = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/todos/", {
+        const response = await axios.get(`${API_BASE_URL}/api/todos/`, {
           headers: { "x-auth-token": token }
         });
         setTodos(response.data);
@@ -53,7 +56,7 @@ const Home = () => {
 
     fetchUserData();
     fetchTodos();
-  }, [navigate]);
+  }, [navigate, API_BASE_URL]);
 
   const handleInputChange = (e) => {
     setNewTodo({
@@ -69,7 +72,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:5000/api/todos/",
+        `${API_BASE_URL}/api/todos/`,
         newTodo,
         { headers: { "x-auth-token": token } }
       );
@@ -85,7 +88,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.patch(
-        `http://localhost:5000/api/todos/${id}/toggle`,
+        `${API_BASE_URL}/api/todos/${id}/toggle`,
         {},
         { headers: { "x-auth-token": token } }
       );
@@ -101,7 +104,7 @@ const Home = () => {
   const handleDeleteTodo = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/api/todos/${id}`, {
+      await axios.delete(`${API_BASE_URL}/api/todos/${id}`, {
         headers: { "x-auth-token": token }
       });
       setTodos(todos.filter((todo) => todo._id !== id));

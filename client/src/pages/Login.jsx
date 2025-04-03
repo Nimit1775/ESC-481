@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/user/login", formData);
+      const response = await axios.post("https://esc-481.onrender.com/api/user/login", formData);
       setMessage(response.data.message);
       setUser(response.data.user);
       localStorage.setItem("token", response.data.token);
