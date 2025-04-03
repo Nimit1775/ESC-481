@@ -105,8 +105,8 @@ function FeaturesSection() {
     },
     {
       icon: Clock,
-      title: 'Progress Analytics',
-      description: 'Track your productivity patterns and identify areas for improvement with detailed analytics.'
+      title: 'Work Tracking ',
+      description: 'Track your work patterns and identify areas for improvement with detailed analytics.'
     },
     {
       icon: MessageCircle,
