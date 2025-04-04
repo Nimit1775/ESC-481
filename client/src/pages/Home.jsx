@@ -120,7 +120,7 @@ const Home = () => {
   };
 
   const navigateToChatbot = () => {
-    navigate("/chatbot");
+    navigate("/chat");
   };
 
   if (isLoading) {

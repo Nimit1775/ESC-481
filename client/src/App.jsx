@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
+import Chatbot from './pages/Chatbot'
 function App() {
 
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" element={< Login />} />
           <Route path="/register" element={< Register />} />
           <Route path="/home" element={< Home />} />
+          <Route path="/chat" element={< Chatbot />} />
         </Routes>
         
       </BrowserRouter>
