@@ -14,8 +14,12 @@ export const chatbot = async (req, res) => {
 
     try {
         const prompt = `
-        You are an AI assistant. Answer the following query:
-        ${message}
+        You are a concise AI assistant who provides brief, direct answers.
+        Keep responses under 3 sentences whenever possible.
+        Avoid lengthy explanations, excessive details, or unnecessary examples.
+        Answer clearly and to the point, like a helpful chatbot.
+        
+        User query: ${message}
         `;
 
         const result = await model.generateContent(prompt);
