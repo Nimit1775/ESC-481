@@ -5,7 +5,8 @@ import {
   Github, Twitter, Linkedin, Menu, X 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import  hero  from '../assets/hero.webp';
+import two from '../assets/2nd.jpeg';
 function LandingPage() {
   return (
     <div className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 min-h-screen flex flex-col">
@@ -97,15 +98,15 @@ function Header() {
 function HeroSection() {
   return (
     <section className="relative overflow-hidden py-24 px-6">
-      <div className="container mx-auto text-center relative z-10">
-        <div className="max-w-4xl mx-auto">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
+        <div className="lg:w-1/2 text-center lg:text-left">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
             Transform Procrastination into <span className="text-indigo-600">Productivity</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 mb-10">
             Breakthrough productivity tools powered by behavioral science to help you achieve your goals and beat procrastination.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
             <Link
               to="/register"
               className="bg-indigo-600 text-white px-8 py-3 rounded-full hover:bg-indigo-700 transition-colors shadow-lg flex items-center justify-center"
@@ -119,14 +120,21 @@ function HeroSection() {
               Learn More
             </a>
           </div>
-          <div className="mt-10 flex flex-col sm:flex-row justify-center sm:space-x-6 space-y-4 sm:space-y-0 text-gray-600">
+          <div className="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start sm:space-x-6 space-y-4 sm:space-y-0 text-gray-600">
             {['Science-backed', '30-day Guarantee', '10,000+ Users'].map((feature, index) => (
-              <div key={index} className="flex items-center justify-center space-x-2">
+              <div key={index} className="flex items-center justify-center lg:justify-start space-x-2">
                 <CheckCircle className="h-5 w-5 text-green-500" />
                 <span>{feature}</span>
               </div>
             ))}
           </div>
+        </div>
+        <div className="lg:w-1/2">
+          <img 
+            src={two}
+            alt="Productivity Dashboard" 
+            className="rounded-xl shadow-2xl"
+          />
         </div>
       </div>
     </section>
@@ -182,6 +190,14 @@ function FeaturesSection() {
             </div>
           ))}
         </div>
+        
+        <div className="mt-16 text-center">
+          <img 
+            src={hero} 
+            alt="Features overview" 
+            className="mx-auto rounded-xl shadow-lg w-full max-w-4xl "
+          />
+        </div>
       </div>
     </section>
   );
@@ -190,11 +206,11 @@ function FeaturesSection() {
 function AboutTeamSection() {
   const teamMembers = [
     { name: 'Nimit Sodhani', position: 'Developer' },
-    { name: 'Pradip Adhikary', position: '' },
-    { name: 'Nandini kumari ', position: '' },
-    { name: 'Sagnik Dey', position: '' },
-    { name: 'Mrityunjoy Kundu', position: '' },
-    { name: 'Satyam Anand ', position: '' }
+    { name: 'Pradip Adhikary', position: ' ' },
+    { name: 'Nandini kumari ', position: ' ' },
+    { name: 'Sagnik Dey', position: ' ' },
+    { name: 'Mrityunjoy Kundu', position: ' ' },
+    { name: 'Satyam Anand ', position: ' ' }
   ];
 
   return (
@@ -253,6 +269,15 @@ function CallToActionSection() {
         <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto">
           Join thousands of high achievers who have transformed their lives with FocusFlow.
         </p>
+        
+        <div className="mb-10">
+          <img 
+            src="/api/placeholder/500/300" 
+            alt="App showcase" 
+            className="mx-auto rounded-xl shadow-lg"
+          />
+        </div>
+        
         <form onSubmit={handleSubmit} className="max-w-md mx-auto">
           <div className="flex flex-col sm:flex-row rounded-full bg-white p-1">
             <input
@@ -271,7 +296,7 @@ function CallToActionSection() {
             </button>
           </div>
           <p className="mt-4 text-sm opacity-80">
-           
+            Start your free 14-day trial. No credit card required.
           </p>
         </form>
       </div>
